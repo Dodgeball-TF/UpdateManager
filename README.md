@@ -1,4 +1,4 @@
-# Update Manger
+# Update Manager
 
 This is sort of biased project, based on updating servers with similar map structure and update it with help of SFTP.
 
