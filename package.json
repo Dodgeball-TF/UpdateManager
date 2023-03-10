@@ -1,0 +1,31 @@
+{
+  "name": "updatemanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dodgeball-tf/UpdateManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dodgeball-tf/UpdateManager/issues"
+  },
+  "homepage": "https://github.com/Dodgeball-tf/UpdateManager#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4",
+    "ssh2-sftp-client": "^9.0.4",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/ssh2-sftp-client": "^9.0.0"
+  }
+}
