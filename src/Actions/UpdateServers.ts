@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
-import sftp from 'ssh2-sftp-client';
-import { Server, getConfigFile } from '../utils/Config.js';
+import { getConfigFile } from '../utils/Config.js';
+import SftpClientHandler from '../utils/SftpClientHandler.js';
 
 export default class UpdateServers {
   public static async run() {
@@ -71,27 +71,7 @@ export default class UpdateServers {
 
     // Now we want to update all the servers
     for (const server of serversToUpdate) {
-      await this.updateServer(server, from, to);
-    }
-  }
-
-  private static async updateServer(server: Server, from: string, to: string) {
-    const sftpClient = new sftp();
-    const config = {
-      host: server.ip,
-      port: server.port,
-      username: server.username,
-      password: server.password
-    };
-
-    try {
-      await sftpClient.connect(config);
-      await sftpClient.uploadDir(from, to);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      console.log('Successfully updated server: ' + server.name);
-      sftpClient.end();
+      await SftpClientHandler.uploadFolder(server, from, to);
     }
   }
 }
