@@ -2,6 +2,13 @@
 
 This is sort of biased project, based on updating servers with similar map structure and update it with help of SFTP.
 
+-   [Usage](#usage)
+    -   [Installing & Building](#installing--building)
+    -   [Running](#running)
+-   [Tools](#tools)
+-   [Requirements](#requirements)
+-   [Platforms](#platforms)
+
 # Usage
 
 Instructions on building and running
@@ -22,6 +29,14 @@ It will check if the path is correct so an example can look like: `C:\dev\testin
 You will also be prompted which directory on the servers you want to update to.
 
 Once done it will start updating each server and log once done for each server.
+
+# Tools
+
+-   Possible to add servers in a config
+-   Possible to edit servers in the config
+-   Send updates to servers with help of folders for multiple servers
+-   Replace a keyword in a whole file for multiple servers
+-   Add a new line to a file for multiple servers
 
 # Requirements
 
