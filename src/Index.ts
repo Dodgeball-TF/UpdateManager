@@ -9,6 +9,8 @@ import { createConfigFile, hasConfigFile } from './utils/Config.js';
 import UpdateConfig from './Actions/UpdateConfig.js';
 import EditConfig from './Actions/EditConfig.js';
 import UpdateServers from './Actions/UpdateServers.js';
+import UpdateSingleLine from './Actions/UpdateSingleLine.js';
+import AddNewLine from './Actions/AddNewLine.js';
 
 const run = async () => {
   // On initial bootstrap here we should check if have a config file
@@ -36,6 +38,14 @@ const run = async () => {
         {
           name: 'Start the process of updating the servers',
           value: 'updateServers'
+        },
+        {
+          name: 'Update singe line in a file',
+          value: 'updateSingleLine'
+        },
+        {
+          name: 'Add new line in a file',
+          value: 'addNewLine'
         }
       ]
     }
@@ -50,6 +60,12 @@ const run = async () => {
       break;
     case 'updateServers':
       await UpdateServers.run();
+      break;
+    case 'updateSingleLine':
+      await UpdateSingleLine.run();
+      break;
+    case 'addNewLine':
+      await AddNewLine.run();
       break;
   }
 };
